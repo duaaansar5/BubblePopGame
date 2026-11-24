@@ -1,0 +1,20 @@
+
+{
+  "name": "Bubble Pop Challenge",
+  "short_name": "Bubble Pop",
+  "description": "A cute and colorful bubble popping game",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f8eaff",
+  "theme_color": "#d9a5ff",
+  "icons": [
+    {
+      "src": "./icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
