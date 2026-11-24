@@ -372,3 +372,35 @@ if ("serviceWorker" in navigator) {
 
 // Initial menu
 showMenu();
+
+let isPaused = false;
+
+function togglePause() {
+    if (!playing) return;
+
+    isPaused = !isPaused;
+
+    if (isPaused) {
+        clearInterval(gameTimer);
+        clearInterval(bubbleTimer);
+
+        document.getElementById("pauseBtn").textContent = "▶ Resume";
+        
+    } else {
+        document.getElementById("pauseBtn").textContent = "⏸ Pause";
+
+        gameTimer = setInterval(() => {
+            timeLeft--;
+
+            timerDisplay.textContent = timeLeft;
+            progress.style.width = (timeLeft / 30 * 100) + "%";
+
+            if (timeLeft <= 0) {
+                finishLevel(false);
+            }
+        }, 1000);
+
+        const bubbleSpeed = Math.max(180, 650 - (level - 1) * 15);
+        bubbleTimer = setInterval(createBubble, bubbleSpeed);
+    }
+}
