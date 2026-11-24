@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble Pop Challenge</title>
+
+<link rel="manifest" href="manifest.json">
+
+<meta name="theme-color" content="#d9a5ff">
+
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="./manifest.json">
+</head>
+<body>
+
+    <main class="game-container">
+navigator.serviceWorker.register("./service-worker.js");
+        <header>
+            <div class="logo">💜 Bubble Pop</div>
+            <div class="best-score">
+                🏆 Best: <span id="bestScore">0</span>
+            </div>
+        </header>
+
+        <section class="intro">
+            <h1>Bubble Pop Challenge!</h1>
+            <p>Pop the bubbles before time runs out!</p>
+        </section>
+
+        <section class="stats">
+            <div class="stat-box">
+                <span>⭐ SCORE</span>
+                <strong id="score">0</strong>
+            </div>
+
+            <div class="stat-box timer-box">
+                <span>⏰ TIME</span>
+                <strong id="timer">30</strong>
+            </div>
+
+            <div class="stat-box">
+                <span>💖 LEVEL</span>
+                <strong id="level">1</strong>
+            </div>
+            <button id="pauseBtn" onclick="togglePause()">⏸ Pause</button>
+        </section>
+
+        <div class="progress-container">
+            <div id="progress"></div>
+        </div>
+
+        <section id="gameArea">
+            <div id="message">
+             <div class="welcome-icon">💜</div>
+                <h2>Ready to Pop?</h2>
+                <p>Tap as many bubbles as you can!</p>
+                <p class="instructions">
+                    🌈 Color bubbles = 10 points<br>
+                    🌟 Golden bubbles = 30 points<br>
+                    💣 Bombs = -20 points
+                </p>
+                <button id="startBtn">Let's Play! 🚀</button>
+            </div>
+        </section>
+
+        <footer>
+            <span>🌸 Have fun & keep popping!</span>
+            <button id="soundBtn">🔊 Sound ON</button>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
